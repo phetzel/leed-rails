@@ -21,6 +21,7 @@ gem 'pry-rails'
 gem 'annotate'
 gem 'jquery-rails'
 gem 'aws-sdk-s3', require: false
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
