@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
-    # protect_from_forgery with: :exceptions
     # helper_method :current_user, :logged_in?
+    skip_forgery_protection
 
     def current_user
         return nil unless session[:session_token]
