@@ -1,4 +1,5 @@
 class Api::EmployeesController < ApplicationController
+    skip_forgery_protection
     def index
         employees = Employee.all
         employees = employees.each { |employee| employee[:image] = url_for(employee.photo) }
