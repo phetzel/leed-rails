@@ -1,12 +1,7 @@
 class Api::EmployeesController < ApplicationController
     def index
         employees = Employee.all
-        #employees = employees.each do |employee| 
-        #    if employee.photo.attached?
-        #        employee[:image] = url_for(employee.image)
-        #    end
-        #end
-        render json: employees
+        render json: employees,  except: :image
     end 
 
     def create
