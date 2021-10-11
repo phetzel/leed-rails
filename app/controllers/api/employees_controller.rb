@@ -39,7 +39,8 @@ class Api::EmployeesController < ApplicationController
             :name,
             :title,
             :description,
-            :image
+            :image,
+            :photoUrl
         )
     end 
 end
