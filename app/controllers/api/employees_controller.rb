@@ -1,13 +1,13 @@
 class Api::EmployeesController < ApplicationController
     def index
         employees = Employee.all
-        render json: employees,  except: :image
+        render json: employees
     end 
 
     def create
         employee = Employee.new(employee_params)
         if employee.save
-            render json: employee
+            render json: employee, except: :image
         else 
             render json: employee.errors.full_messages, status: 422
         end
