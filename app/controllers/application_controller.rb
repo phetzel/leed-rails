@@ -2,6 +2,7 @@ class ApplicationController < ActionController::API
     # helper_method :current_user, :logged_in?
     # skip_forgery_protection
     # skip_before_action :verify_authenticity_token
+    skip_forgery_protection
     include ActionController::Helpers
 
 
