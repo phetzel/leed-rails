@@ -10,6 +10,7 @@ class Api::EmployeesController < ApplicationController
     def create
         employee = Employee.new(employee_params)
         if employee.save
+            employee.photoUrl = url_for(employee.image)
             render json: employee, except: :image
         else 
             render json: employee.errors.full_messages, status: 422
@@ -19,6 +20,7 @@ class Api::EmployeesController < ApplicationController
     def update 
         employee = Employee.find(params[:id])
         if employee.update(employee_params)
+            employee.photoUrl = url_for(employee.image)
             render json: employee
         else  
             render json: employee.errors.full_messages, status: 422
@@ -29,6 +31,9 @@ class Api::EmployeesController < ApplicationController
         employee = Employee.find(params[:id])
         employee.destroy
         employees = Employee.all
+        employees.each do |employee|
+            employee.photoUrl = url_for(employee.image)
+        end
         render json: employees
     end
 
