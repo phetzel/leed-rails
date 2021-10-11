@@ -1,4 +1,4 @@
 class Employee < ApplicationRecord
     validates :name, presence: true
-    has_one_attached :photo
+    has_one_attached :image
 end
