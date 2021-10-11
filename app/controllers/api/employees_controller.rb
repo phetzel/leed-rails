@@ -1,6 +1,9 @@
 class Api::EmployeesController < ApplicationController
     def index
         employees = Employee.all
+        employees.each do |employee|
+            employee.photoUrl = url_for(employee.image)
+        end
         render json: employees
     end 
 
