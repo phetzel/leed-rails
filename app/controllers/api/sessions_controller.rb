@@ -4,9 +4,7 @@ class Api::SessionsController < ApplicationController
             params[:user][:name],
             params[:user][:password]
         )
-        puts params[:user][:name]
-        puts params[:user][:password]
-        puts @user
+
         if @user 
             login!(@user)
             render @current_user
