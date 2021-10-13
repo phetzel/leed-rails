@@ -4,7 +4,6 @@ class Api::UsersController < ApplicationController
 
         if user.save
             login!(user)
-            puts '----------------'
             render json: user
         else
             render json: user.errors.full_messages, status: 422
